@@ -19,6 +19,7 @@ class TestConan(ConanFile):
             self.output.info("\033[1;36m====================================\033[0m")
             self.output.info(f"\033[1;36mDependency: {dep.ref}\033[0m")
             self.output.info(f"  \033[1;32mPackage folder:\033[0m {dep.package_folder}")
+            self.output.info(f"  \033[33mpackage_type:\033[0m {dep.package_type}")
             self.output.info(f"  \033[33mdirect:\033[0m {require.direct}")
             self.output.info(f"  \033[33mheaders:\033[0m {require.headers}")
             self.output.info(f"  \033[33mlibs:\033[0m {require.libs}")
@@ -28,7 +29,12 @@ class TestConan(ConanFile):
             self.output.info(
                 f"  \033[33mtransitive_libs:\033[0m {require.transitive_libs}"
             )
-            self.output.info(f"  \033[33mpackage_type:\033[0m {dep.package_type}")
+            self.output.info(f"  \033[33mbuild:\033[0m {require.build}")
+            self.output.info(f"  \033[33mrun:\033[0m {require.run}")
+            self.output.info(f"  \033[33mtest:\033[0m {require.test}")
+            self.output.info(f"  \033[33mvisible:\033[0m {require.visible}")
+            self.output.info(f"  \033[33moverride:\033[0m {require.override}")
+            self.output.info(f"  \033[33mforce:\033[0m {require.force}")
 
     def deploy(self):
         self.output.info("\033[1;32mDeploying package...\033[0m")
