@@ -14,3 +14,11 @@ conanfile.py: Dependency: cmake/4.2.0, Package folder: %CONANCACHE%\p\cmake20ac4
 ```
 
 This shows that package folders of transitive dependencies will be available after the install command.
+
+## Deploy
+
+To deploy the content of the package folders of the dependencies to the workspace use:
+
+```bash
+conan install . -pr="./myprofile" --deployer-package=*
+```
